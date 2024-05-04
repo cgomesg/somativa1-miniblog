@@ -1,0 +1,25 @@
+name: Deploy Web App
+
+on:
+  push:
+    branches:
+      - main  # Troque pelo nome da sua branch principal
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Install Dependencies
+      run: npm install  # Se estiver usando Node.js
+
+    - name: Build Application
+      run: npm run build  # Comando para construir sua aplicação
+
+    - name: Deploy to Web Server
+      run: |
+        # Comando para enviar os arquivos construídos para o servidor web
+        # Exemplo: scp -r build/ user@server:/path/to/web/root
