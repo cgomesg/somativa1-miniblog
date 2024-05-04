@@ -57,12 +57,12 @@ jobs:
             cgomesv/miniblog:v1
             cgomesv/miniblog:latest
 
-      - name: Telegram message
-        uses: akeylimepie/telegram-action@v0.1.2
+      - name: Notify Telegram
+        uses: yanzay/notify-telegram@v0.1.0
         with:
-          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          chat_id: ${{ secrets.TELEGRAM_CHAT_ID }}
-          text: "Pull Request #${{ github.event.number }} foi aberto por ${{ github.actor }}. Você pode revisá-lo aqui: ${{ github.event.pull_request.html_url }}"
+          chat: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }} 
+          status: "Pull Request #${{ github.event.number }} foi aberto por ${{ github.actor }}. Você pode revisá-lo aqui: ${{ github.event.pull_request.html_url }}"
         
           
         
