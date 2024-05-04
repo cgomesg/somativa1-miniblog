@@ -61,6 +61,8 @@ jobs:
         uses: akeylimepie/telegram-action@v0.1.2
         with:
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          chat_id: ${{ secrets.TELEGRAM_CHAT_ID }}
+          text: "Pull Request #${{ github.event.number }} foi aberto por ${{ github.actor }}. Você pode revisá-lo aqui: ${{ github.event.pull_request.html_url }}"
         
           
         
