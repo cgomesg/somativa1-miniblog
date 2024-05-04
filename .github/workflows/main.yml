@@ -28,10 +28,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: SAST Scan
-        uses: github/codeql-action/analyze@v2
+      - name: sast-scan
+        uses: AppThreat/sast-scan-action@1.0.2
         with:
-          languages: javascript
+          type: "nodejs"
 
   deploy:
     runs-on: ubuntu-latest
