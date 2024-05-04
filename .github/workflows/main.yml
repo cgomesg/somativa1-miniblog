@@ -57,10 +57,10 @@ jobs:
             cgomesv/miniblog:v1
             cgomesv/miniblog:latest
 
-      - name: Notify Telegram
-        uses: nikhilbadyal/telegram-forwarder@0.0.1
+      - name: Telegram message
+        uses: akeylimepie/telegram-action@v0.1.2
         with:
-          args: ${{ secrets.TELEGRAM_BOT_TOKEN }} ${{ secrets.TELEGRAM_CHAT_ID }} "Pull Request #${{ github.event.number }} foi aberto por ${{ github.actor }}. Você pode revisá-lo aqui: ${{ github.event.pull_request.html_url }}"
-
-
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        
+          
         
