@@ -57,8 +57,8 @@ jobs:
             cgomesv/miniblog:v1
             cgomesv/miniblog:latest
 
-      - name: Notify Telegram
-        uses: appleboy/telegram-send-message@v0.1.0
+      - name: Telegram Notify
+        uses: appleboy/telegram-action@0.0.3
         with:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
