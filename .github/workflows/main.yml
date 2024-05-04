@@ -57,8 +57,8 @@ jobs:
             cgomesv/miniblog:v1
             cgomesv/miniblog:latest
 
-      - name: Notify Telegram
-        uses: appleboy/telegram-action@v0.1.6
+      - name: Telegram Notifier
+        uses: nikhilbadyal/telegram-forwarder@0.0.1
         with:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
